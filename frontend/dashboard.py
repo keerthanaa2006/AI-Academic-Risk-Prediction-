@@ -4,14 +4,16 @@ import joblib
 import sys
 import os
 
-# allow access to model folder
-sys.path.append(os.path.abspath(".."))
+# get project root
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0, ROOT_DIR)
 
 from model.columnar import map_columns
 model_path = os.path.join(BASE_DIR, "model", "risk_model.pkl")
 model = joblib.load(model_path)
 # load trained model
-model = joblib.load("model/risk_model.pkl")
+model_path = os.path.join(ROOT_DIR, "model", "risk_model.pkl")
+model = joblib.load(model_path)
 
 st.title("AI Academic Risk Prediction Dashboard")
 
