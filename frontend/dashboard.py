@@ -10,7 +10,7 @@ sys.path.append(os.path.abspath(".."))
 from model.columnar import map_columns
 
 # load trained model
-model = joblib.load("model/risk_model.pkl")
+model = joblib.load("../model/risk_model.pkl")
 
 st.title("AI Academic Risk Prediction Dashboard")
 
