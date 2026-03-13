@@ -8,7 +8,8 @@ import os
 sys.path.append(os.path.abspath(".."))
 
 from model.columnar import map_columns
-
+model_path = os.path.join(BASE_DIR, "model", "risk_model.pkl")
+model = joblib.load(model_path)
 # load trained model
 model = joblib.load("model/risk_model.pkl")
 
