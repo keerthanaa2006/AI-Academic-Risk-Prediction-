@@ -7,7 +7,7 @@ import os
 # allow access to model folder
 sys.path.append(os.path.abspath(".."))
 
-from model.columnar import map_columns
+from columnar import map_columns
 
 # load trained model
 model = joblib.load("../model/risk_model.pkl")
