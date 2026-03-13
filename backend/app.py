@@ -3,7 +3,7 @@ import joblib
 print("Flask backend loaded successfully")
 app = Flask(__name__)
 
-model = joblib.load("../model/risk_model.pkl")
+model = joblib.load("model/risk_model.pkl")
 
 @app.route("/")
 def home():
