@@ -9,6 +9,12 @@ ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, ROOT_DIR)
 
 from model.columnar import map_columns
+@st.cache_resource
+def load_model():
+    from sentence_transformers import SentenceTransformer
+    return SentenceTransformer("all-MiniLM-L6-v2")
+
+model = load_model()
 model_path = os.path.join(BASE_DIR, "model", "risk_model.pkl")
 model = joblib.load(model_path)
 # load trained model
